@@ -2,6 +2,7 @@
 1. index.html の lang などを設定する
 1. pnpm create @eslint/config
 1. 好みに応じて TypeScript の型も使った Lint: https://typescript-eslint.io/docs/linting/typed-linting
+1. pnpm i -D eslint-plugin-react-hooks
 1. pnpm i -D prettier eslint-config-prettier
 1. eslint.config を以下のように弄る
 
@@ -10,6 +11,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
@@ -20,7 +22,7 @@
 }
 ```
 
-7. .prettierrc を以下のように弄る
+8. .prettierrc を以下のように弄る
 
 ```json
 {
