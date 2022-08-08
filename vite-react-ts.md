@@ -36,6 +36,10 @@ prettier を追加
 
 `npm i -D prettier eslint-config-prettier`
 
+prettier のインポート順プラグイン追加
+
+`npm i -D @trivago/prettier-plugin-sort-imports`
+
 追加した eslint のプラグインを設定に.eslintrc に追加
 
 ```json
@@ -59,7 +63,10 @@ prettier を追加
 
 ```json
 {
-  "singleQuote": true
+  "singleQuote": true,
+  "importOrder": ["^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
 ```
 
