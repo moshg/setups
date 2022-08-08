@@ -1,4 +1,4 @@
-# React + Vite + TypeScript のセットアップ
+# (P)React + Vite + TypeScript のセットアップ
 
 ## プロジェクト作成
 
@@ -6,7 +6,19 @@
 
 `index.html` の lang などを設定する
 
-## eslint の設定
+Preact を利用する場合は以下のエイリアスを tsconfig に設定する
+
+```json
+"compilerOptions": {
+"baseUrl": "./",
+  "paths": {
+    "react": ["./node_modules/preact/compat/"],
+    "react-dom": ["./node_modules/preact/compat/"]
+  }
+}
+```
+
+## eslint, prettier
 
 `npm create @eslint/config`
 
@@ -15,6 +27,10 @@
 hooks のリントを追加
 
 `npm i -D eslint-plugin-react-hooks`
+
+Preact を使用する場合
+
+`npm i -D eslint-config-preact`
 
 prettier を追加
 
@@ -28,6 +44,7 @@ prettier を追加
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "preact", // Preactを利用する場合
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
@@ -45,3 +62,7 @@ prettier を追加
   "singleQuote": true
 }
 ```
+
+## storybook
+
+`npx storybook init --builder @storybook/builder-vite`
