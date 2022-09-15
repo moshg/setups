@@ -24,55 +24,18 @@ eslint のラッパー
 
 `npm i -D xo`
 
-## eslint, prettier
+React 対応
 
-`npm create @eslint/config`
+`npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks`
 
-好みに応じて TypeScript の型も使ったリントを設定する: https://typescript-eslint.io/docs/linting/typed-linting
-
-hooks のリントを追加
-
-`npm i -D eslint-plugin-react-hooks`
-
-Preact を使用する場合
-
-`npm i -D eslint-config-preact`
-
-prettier を追加
-
-`npm i -D prettier eslint-config-prettier`
-
-prettier のインポート順プラグイン追加
-
-`npm i -D @trivago/prettier-plugin-sort-imports`
-
-追加した eslint のプラグインを設定に.eslintrc に追加
+package.json に設定を加える
 
 ```json
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "preact", // Preactを利用する場合
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "rules": {
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+  "xo": {
+    "space": true,
+    "extends": "xo-react/space"
   }
-}
-```
-
-.prettierrc に設定を追加
-
-```json
-{
-  "singleQuote": true,
-  "importOrder": ["^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
 }
 ```
 
@@ -93,7 +56,7 @@ export default defineConfig({
     checker({
       typescript: true,
       eslint: {
-        lintCommand: 'eslint "./src/**/*.{ts,tsx}"', // for example, lint .ts & .tsx
+        lintCommand: 'xo "./src/**/*.{ts,tsx}"',
       },
     }),
     preact(),
