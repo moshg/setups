@@ -18,6 +18,12 @@ Preact を利用する場合は以下のエイリアスを tsconfig に設定す
 }
 ```
 
+## xo
+
+eslint のラッパー
+
+`npm i -D xo`
+
 ## eslint, prettier
 
 `npm create @eslint/config`
