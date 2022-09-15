@@ -70,6 +70,31 @@ prettier のインポート順プラグイン追加
 }
 ```
 
+## TypeScript
+
+そのままでは Vite で型チェックが行われないのでツールをインストールする。
+
+`npm i vite-plugin-checker -D`
+
+`vite.config.ts` に追記する
+
+```ts
+import { defineConfig } from "vite";
+import checker from "vite-plugin-checker";
+
+export default defineConfig({
+  plugins: [
+    checker({
+      typescript: true,
+      eslint: {
+        lintCommand: 'eslint "./src/**/*.{ts,tsx}"', // for example, lint .ts & .tsx
+      },
+    }),
+    preact(),
+  ],
+});
+```
+
 ## storybook
 
 `npx storybook init --builder @storybook/builder-vite`
