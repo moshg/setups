@@ -35,7 +35,11 @@ package.json に設定を加える
   "xo": {
     "space": true,
     "prettier": true,
-    "extends": "xo-react/space"
+    "extends": "xo-react/space",
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   }
 }
 ```
