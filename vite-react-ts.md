@@ -34,7 +34,24 @@ package.json に設定を加える
 {
   "xo": {
     "space": true,
+    "prettier": true,
     "extends": "xo-react/space"
+  }
+}
+```
+
+VSCode を使用する場合、`xo`の拡張機能導入後に以下の設定を追加する。
+
+```json
+{
+  "editor.formatOnSave": true,
+  "xo.enable": true,
+  "xo.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "samverschueren.linter-xo"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "samverschueren.linter-xo"
   }
 }
 ```
