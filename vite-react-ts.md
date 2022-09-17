@@ -38,7 +38,9 @@ package.json に設定を加える
     "extends": "xo-react/space",
     "rules": {
       "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "import/extensions": "off",
+      "unicorn/filename-case": "off"
     }
   }
 }
