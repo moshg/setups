@@ -4,6 +4,8 @@
 
 `npm create vite`
 
+`TypeScript + SWC` を選択する。
+
 `index.html` の lang などを設定する
 
 Preact を利用する場合は以下のエイリアスを tsconfig に設定する
