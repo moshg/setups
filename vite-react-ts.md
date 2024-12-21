@@ -114,24 +114,3 @@ export default defineConfig({
   ],
 });
 ```
-
-## storybook
-
-以下のコマンドで初期化する
-
-```sh
-pnpx storybook init --builder @storybook/builder-vite
-```
-
-pnpm から利用する場合は以下の記述を `.npmrc` に追加する
-
-```ini
-public-hoist-pattern[]=*storybook*
-legacy-peer-deps=true
-```
-
-以下のコマンドで初期化する
-
-```sh
-pnpx storybook init -s --builder @storybook/builder-vite
-```
