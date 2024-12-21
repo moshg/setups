@@ -2,9 +2,13 @@
 
 ## プロジェクト作成
 
-`npm create vite`
+以下のコマンドを実行する
 
-`TypeScript + SWC` を選択する。
+```sh
+pnpm create vite
+√ Select a framework: » React
+√ Select a variant: » TypeScript + SWC
+```
 
 `index.html` の lang などを設定する
 
@@ -12,7 +16,7 @@ Preact を利用する場合は以下のエイリアスを tsconfig に設定す
 
 ```json
 "compilerOptions": {
-"baseUrl": "./",
+  "baseUrl": "./",
   "paths": {
     "react": ["./node_modules/preact/compat/"],
     "react-dom": ["./node_modules/preact/compat/"]
@@ -22,25 +26,37 @@ Preact を利用する場合は以下のエイリアスを tsconfig に設定す
 
 ## eslint, prettier
 
-`npm create @eslint/config`
+以下のコマンドを実行する
+
+```sh
+pnpm create @eslint/config
+```
 
 好みに応じて TypeScript の型も使ったリントを設定する: https://typescript-eslint.io/docs/linting/typed-linting
 
 hooks のリントを追加
 
-`npm i -D eslint-plugin-react-hooks`
+```sh
+pnpm i -D eslint-plugin-react-hooks
+```
 
 Preact を使用する場合
 
-`npm i -D eslint-config-preact`
+```sh
+pnpm i -D eslint-config-preact
+```
 
 prettier を追加
 
-`npm i -D prettier eslint-config-prettier`
+```sh
+pnpm i -D prettier eslint-config-prettier
+```
 
 prettier のインポート順プラグイン追加
 
-`npm i -D @trivago/prettier-plugin-sort-imports`
+```sh
+pnpm i -D @trivago/prettier-plugin-sort-imports
+```
 
 追加した eslint のプラグインを設定に.eslintrc に追加
 
@@ -76,7 +92,9 @@ prettier のインポート順プラグイン追加
 
 そのままでは Vite で型チェックが行われないのでツールをインストールする。
 
-`npm i vite-plugin-checker -D`
+```sh
+pnpm i vite-plugin-checker -D
+```
 
 `vite.config.ts` に追記する
 
@@ -99,7 +117,11 @@ export default defineConfig({
 
 ## storybook
 
-`npx storybook init --builder @storybook/builder-vite`
+以下のコマンドで初期化する
+
+```sh
+pnpx storybook init --builder @storybook/builder-vite
+```
 
 pnpm から利用する場合は以下の記述を `.npmrc` に追加する
 
@@ -110,4 +132,6 @@ legacy-peer-deps=true
 
 以下のコマンドで初期化する
 
-`pnpx storybook init -s --builder @storybook/builder-vite`
+```sh
+pnpx storybook init -s --builder @storybook/builder-vite
+```
